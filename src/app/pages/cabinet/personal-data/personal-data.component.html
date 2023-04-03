@@ -1,0 +1,21 @@
+<div class="tab-content" id="v-pills-tabContent" [formGroup]="registerForm">
+    <div class="personal-text ">
+        <div class="square">1</div>
+        <h4>Особисті дані</h4>
+    </div>
+    <div class="name">
+        <input type="text" formControlName="firstName" >
+        <input type="text" formControlName="lastName"  >
+    </div>
+    <input type="text" formControlName="phoneNumber" >
+    <input type="text" formControlName="email" >
+    <div  class="personal-text ">
+        <div class="square">2</div>
+        <h4 >Адреси </h4>
+    </div>
+  <div class="button">
+    <button class="white btn  ">ДОДАТИ АДРЕСУ</button>
+    <button class="green btn " (click)="upadate()">ЗБЕРЕГТИ ЗМІНИ</button>
+  </div>
+  <button class="green btn exit " (click)="logout()">ВИХІД</button>
+</div>

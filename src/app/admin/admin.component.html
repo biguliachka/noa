@@ -1,0 +1,10 @@
+<div class="left-block">
+    <a [routerLink]="[ 'vacancies' ]" routerLinkActive="route-active" class="nav-link ">Вакансії</a>
+    <a [routerLink]="[ 'category' ]" routerLinkActive="route-active" class="nav-link ">Категорії</a>
+    <a  [routerLink]="[ 'product' ]" routerLinkActive="route-active" class="nav-link " >Товари</a>
+  <a  [routerLink]="[ 'thai-market' ]" routerLinkActive="route-active" class="nav-link " >THAI</a>
+    <button (click)="logout()">ВИХІД</button>
+</div>
+<div class="tab-content" id="v-pills-tabContent">
+    <router-outlet></router-outlet>
+</div>

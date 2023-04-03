@@ -1,0 +1,335 @@
+.content {
+  padding-top: 190px;
+  width: 90%;
+  margin: auto;
+
+  p {
+    font-size: 16px;
+    color: #323232;
+  }
+
+  .title, span {
+    font-family: MyFontBold;
+  }
+}
+
+.tab-content {
+  margin: auto;
+  width: 100%;
+}
+
+.square {
+  margin-right: 10px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  background-color:  #2d7d7d;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  float: left;
+}
+
+input, select{
+  width: 100%;
+  height: 50px;
+  margin:10px  0 ;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding:10px;
+  font-family: serif;
+}
+.name,.button{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  input,.little{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 48%;
+  }
+
+}
+.checkbox-entry-null {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid lightgrey;
+  background-color: #F5F5F5;
+  border-radius: 5px;
+  cursor: pointer;
+  float: left;
+}
+.checkbox-entry{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #2d7d7d;
+  background-color: #F5F5F5;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  float: left;
+  .checkbox{
+    width: 10px;
+    border-radius: 2px;
+    height: 10px;
+    background-color: #2d7d7d;
+  }
+}
+input:focus {
+  outline: 1px solid #2d7d7d;
+  border-radius: 3px;
+}
+.some-basket {
+  padding-top: 10px;
+  padding-bottom: 20px;
+
+  h4{
+    margin: auto;
+    width: 92%;
+  }
+}
+h4{
+  font-family: MyFontB;
+}
+.img {
+  width: 110px;
+  margin: 0 40px;
+}
+
+svg:hover {
+  color: #b5d8f7;
+}
+.container{
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  .data, .order{
+    width: 50%;
+  }
+}
+.information {
+  position: relative;
+  margin: 10px auto;
+  border: 1px solid lightgray;
+  width: 92%;
+  min-height: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  span {
+    position: absolute;
+    font-size: 25px;
+    top: 0px;
+    right: 15px;
+    cursor: pointer;
+  }
+
+  span:hover {
+    color: #2d7d7d;
+  }
+
+  .btn-group {
+    display: flex;
+    margin: 0 5px;
+    position: static;
+
+    button {
+      width: 30px;
+      height: 30px;
+      background-color: white;
+      text-align: center;
+      padding: 0;
+      border: none;
+      border-radius: 4px;
+      font-family: MyFontB;
+    }
+
+    .minus, .plus {
+      background-color: rgba(245, 242, 242, 0.67);
+    }
+
+    .value {
+      background-color: rgba(255, 255, 255, 0);
+    }
+
+    .minus:hover,
+    .plus:hover {
+      background-color: #2d7d7d;
+      color: white;
+    }
+  }
+}
+.basket-price{
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+}
+.checkboxDostavka{
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: left;
+  span{
+    font-size: 16px;
+  }
+}
+.appliances{
+  padding: 40px;
+  flex-direction: column;
+  align-items: start;
+}
+.order .checkboxDostavka{
+  flex-direction: column;
+  width: 92%;
+  margin: auto;
+  margin-top: 10px;
+}
+.order .personal-text{
+  font-size: 16px;
+  border-top: 1px solid lightgrey;
+  padding-top: 15px;
+  width: 92%;
+  margin: auto;
+  margin-top: 15px;
+}
+.suma{
+  width: 100px;
+  margin: 10px;
+}
+.rest{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.buy {
+  width: 92%;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  margin: auto;
+flex-direction: column;
+  span {
+    font-family: serif;
+  }
+.allSumm{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+  button {
+    width: 100%;
+    font-size: 16px;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid #2d7d7d;
+    background-color: #2d7d7d;
+    color: white;
+    border-radius: 10px;
+  }
+  button:hover {
+    background-color: white;
+    color: #2d7d7d;
+
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .content {
+    padding-top: 150px;
+
+    .h1 {
+      font-size: 30px;
+    }
+  }
+  .container {
+    flex-wrap: wrap;
+
+    .data, .order {
+      margin: auto;
+      width: 90%;
+    }
+  }
+}
+@media screen and (max-width: 718px) {
+  .content {
+    .h1 {
+      font-size: 26px;
+    }
+  }
+  .container {
+    flex-wrap: wrap;
+
+    .data, .order {
+      margin: auto;
+      width: 95%;
+    }
+  }
+}
+
+@media screen and (max-width: 573px) {
+  .content {
+    .h1 {
+      font-size: 24px;
+    }
+  }
+  .order .personal-text{
+    font-size: 12px;
+  }
+  .checkboxDostavka{
+    span{
+      font-size: 12px;
+    }
+  }
+  .container{
+    padding: 0;
+    width: 95%;
+  }
+  .name,.button{
+    .little{
+      width: 100%;
+    }
+
+  }
+}
+@media screen and (max-width: 767px) {
+
+    .cart {
+      width: 100%;
+      .header {
+        width: 100%;
+      }
+    }
+
+  .buy {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+
+
+      .img {
+        margin: 0 10px;
+        width: 30%;
+      }
+
+
+  .buy {
+    height: 16%;
+    flex-direction: column;
+    font-size: 16px;
+
+    button {
+      width: 100%;
+    }
+  }
+}

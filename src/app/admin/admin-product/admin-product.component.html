@@ -1,0 +1,62 @@
+<div class="product">
+    <button (click)="addPoductStatus()">ДОДАТИ ПРОДУКТ</button>
+    <div *ngIf="addStatus">
+        <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+            <select formControlName="category" class="form-select">
+                <option [ngValue]="category" *ngFor="let category of adminCategories">{{category.name}}
+                </option>
+              <option [ngValue]="thai" *ngFor="let thai of adminThai">{{thai.name}}
+              </option>
+            </select>
+            <div><input type="text" formControlName="name" placeholder="*Назва">
+                <input type="text" formControlName="path" placeholder="*Шлях">
+            </div>
+            <textarea type="text" formControlName="description" placeholder="*Інгредієнти"></textarea>
+            <div><input type="text" formControlName="weight" placeholder="*Вага">
+                <input type="text" formControlName="price" placeholder="*Ціна">
+            </div>
+          <div class="checkbox"><p>Culinasia menu:</p> <input type="checkbox" formControlName="culinasia" name="culinasia" id="culinasia"></div> <ng-container *ngIf="!isUploaded">
+                <input type="file" class="form-control" id="formFile" (change)="upload($event)">
+                <div class="progress mb-3">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" [style.width.%]="uploadPercent"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="isUploaded">
+                <img [src]="valueByControl('imagePath')" width="100px" alt="">
+                <button type="button" class="btn btn-danger" (click)="deleteImage()">delete</button>
+            </ng-container>
+            <button [disabled]="productForm.invalid" type="submit" (click)="addProduct()" class="save"> {{ editStatus
+                ? 'ЗБЕРЕГТИ' : 'ДОБАВИТИ' }}</button>
+        </form>
+    </div>
+    <table class="list" id="table">
+        <thead>
+            <tr>
+                <td style="width :100px; "> <a>Тип </a> </td>
+                <td style="width :100px; "> <a>Категорія </a> </td>
+                <td style="width :200px; "> <a>Назва </a> </td>
+                <td style="width :100px;"> <a>Інгредієнти</a></td>
+                <td style="width :100px;"> <a>Вага</a></td>
+                <td style="width :100px;"> <a>Ціна</a></td>
+                <td style="width :150px; "><a>Картинка</a></td>
+                <td style="width :150px;  "> <a>Дії</a></td>
+            </tr>
+        </thead>
+        <tbody *ngFor="let product of adminProducts">
+            <tr>
+                <td style="width :100px; "> <a>{{ product.culinasia }}</a> </td>
+                <td style="width :100px; "> <a>{{ product.category.name }} </a> </td>
+                <td style="width :200px; "> <a>{{ product.name }} </a> </td>
+                <td style="width :100px;"> <a>{{ product.description| slice:0:70}}</a><span *ngIf="product.description.length > 70">...</span></td>
+                <td style="width :100px;"> <a>{{ product.weight }} г</a></td>
+                <td style="width :100px;"> <a>{{ product.price }} грн</a></td>
+                <td style="width :150px; "><img [src]="product.imagePath" alt="" height="50px"></td>
+                <td style="width :150px;  ">
+                    <div class='buttons'><button (click)="editProduct(product)"> Редагувати</button> <button
+                            (click)="deleteProduct(product)" [disabled]="editStatus"> Видалити</button></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

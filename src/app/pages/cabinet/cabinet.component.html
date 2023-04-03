@@ -1,0 +1,23 @@
+<div class="content">
+<div class="top-block">
+  <ul class="categories-list ul">
+    <li class="categories-list-item "><a [routerLink]="[ 'personal-data' ]" routerLinkActive="route-active" class="nav-link ">Особисті дані</a></li>
+    <li class="categories-list-item ">
+      <a [routerLink]="[ 'history' ]" routerLinkActive="route-active" class="nav-link ">Історія замовлень</a></li>
+    <li class="categories-list-item "> <a [routerLink]="['favorites-cabinet']" routerLinkActive="route-active" class="nav-link ">Улюблені</a></li>
+    <li class="categories-list-item "> <a [routerLink]="[ 'user-password' ]" routerLinkActive="route-active" class="nav-link ">Зміна паролю</a></li>
+  </ul>
+  <select (change)="rout($event)"   [(ngModel)]="selectValue" id="value-cabinet" class="categories-list select ">
+    <option multiple value="personal-data" routerLinkActive="route-active" class="nav-link ">Особисті дані</option>
+    <option multiple value="history" routerLinkActive="route-active" class="nav-link ">Історія замовлень</option>
+    <option multiple routerLinkActive="route-active" class="nav-link ">Улюблені</option>
+    <option multiple  value="user-password"  routerLinkActive="route-active" class="nav-link ">Зміна паролю</option>
+  </select>
+
+
+</div>
+
+<div class="tab-content" id="v-pills-tabContent">
+  <router-outlet></router-outlet>
+</div>
+</div>

@@ -1,0 +1,32 @@
+<mat-dialog-content>
+
+  <div class="cart" >
+    <div class="header"><h3>Кошик</h3><p (click)="clearBasket()"> ОЧИСТИТИ КОШИК </p> <span  aria-hidden="true" (click)="close()">&times;</span></div>
+    <div class="some-basket" *ngIf="total != 0">
+      <div class="information" *ngFor="let product of basket">
+        <img class="img" [src]="product.imagePath">
+        <div class="start"><p>{{product.name}}</p>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" (click)="productCount(product, false)" class="minus">-</button>
+            <button type="button" class="value">{{product.count}}</button>
+            <button type="button" (click)="productCount(product, true)" class="plus ">+</button>
+          </div></div>
+
+        <div class="basket-price empty ">
+          <b id="basketTotalPrice" class="card-total-price">{{product.count * product.price}}</b>
+           грн
+        </div>
+        <span  aria-hidden="true"(click)="deleteBasket(product)">&times;</span>
+      </div>
+    </div>
+  </div>
+
+</mat-dialog-content>
+<div class="buy">
+  <div><span>Сума: </span><b id="basket-total-price" class="card-total-price">{{total}}</b>
+    <span> грн</span>
+  </div>
+  <button [disabled]="total== 0" mat-dialog-close [routerLink]="['/checkout' ]"><span><b>ОФОРМИТИ
+                        ЗАМОВЛЕННЯ</b></span></button>
+
+</div>

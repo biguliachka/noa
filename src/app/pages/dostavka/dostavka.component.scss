@@ -1,0 +1,164 @@
+.content {
+  padding-top: 190px;
+  width: 90%;
+  margin: auto;
+  p{
+    font-size: 16px;
+    color: #323232;
+  }
+  .title, span{
+    font-family: MyFontBold;
+  }
+  span{
+    color: #2d7d7d;
+  }
+  .simple-page{
+    padding-top: 40px;
+    width: 85%;
+    margin: auto;
+  }
+  .pay-page-map{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+   flex-direction: row-reverse;
+    flex-wrap: wrap;
+    .bike-main{
+      width: 40%;
+
+    }
+    .bike-block{
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 40px;
+    }
+    li {
+      font-family: MyFontM;
+      font-size: 16px;
+      padding: 10px 20px 10px 10px;
+    }
+    li::marker{
+      font-size: 16px;
+    }
+    .red  .title,.red li::marker {
+      color: #EF2F3D;
+    }
+    .yellow .title, .yellow li::marker{
+      color: #ffcc00;
+    }
+    .green .title, .green li::marker{
+      color:#599921;
+    }
+    .bike-imgs{
+      padding-right: 30px;
+      img{
+        padding-top: 20px;
+      }
+    }
+  }
+  .pay-map{
+    width: 55%;
+    margin:0 auto;
+img{
+ width: 100%;
+}
+  }
+}
+.pay-main{
+  margin: auto;
+  display: flex;
+ flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.pay-page-block{
+  padding-right: 30px;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+
+}
+.pay-imgs{
+  padding: 10px;
+}
+@media screen and (max-width: 1199px) {
+  .content {
+    .pay-map{
+      width: 930px;
+      margin-bottom: 20px;
+      img{
+     width:    100%
+      }
+
+    }
+    .pay-page-map .bike-main{
+      width: 90%;
+      .bike-block{
+       width: 650px;
+        padding-bottom: 20px;
+      }
+    }
+    .pay-page-block{
+      padding-right: 10px;
+      width: 45%;
+    }
+  }
+
+}
+@media screen and (max-width: 991px) {
+  .content {
+      padding-top: 150px;
+    .h1 {
+      font-size: 30px;
+    }
+    .pay-map, .bike-main, .pay-page-map{
+      width: 690px;
+    }
+    .pay-page-map .bike-main{
+      .bike-block{
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 718px) {
+  .content {
+    .h1 {
+      font-size: 26px;
+    }
+    .pay-map, .bike-main, .pay-page-map{
+      width: 540px;
+
+    }
+    .pay-page-block{
+      width: 100%;
+      padding-bottom: 10px;
+    }
+  }
+}
+@media screen and (max-width: 573px) {
+  .content {
+    .h1{
+      font-size: 24px;
+    }
+    .pay-map, .bike-main, .pay-page-map{
+      width: 100%;
+      .bike-block{
+        padding-bottom: 10px;
+      }
+    }
+    .pay-page-map li{
+      font-size: 12px;
+      padding: 5px;
+    }
+    .bike-imgs {
+      width: 50%;
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+}

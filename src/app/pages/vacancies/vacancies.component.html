@@ -1,0 +1,17 @@
+<div class="content">
+  <div class="h1 title text-center page-main-title">Приєднуйся до команди <span>NOA</span> </div>
+  <div class="news-block">
+    <div class="news-item" *ngFor="let vacansie of vacansies" [routerLink]="['/vacancies/'+vacansie.id]">
+      <div class="news-imgs">
+       <img [src]="vacansie.imagePath" alt="">
+      </div>
+      <div class="news-cont">
+        <div class="title h4"><a >{{vacansie.name}}</a></div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>

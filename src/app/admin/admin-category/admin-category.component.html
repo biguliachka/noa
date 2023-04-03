@@ -1,0 +1,47 @@
+<div class="category">
+    <button (click)="addCategoryStatus()">ДОДАТИ КАТЕГОРІЮ</button>
+    <div *ngIf="addStatus">
+        <form [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+            <div><input type="text" formControlName="name" placeholder="*Назва">
+                <input type="text" formControlName="path" placeholder="*Шлях">
+            </div>
+
+            <ng-container *ngIf="!isUploaded">
+                <input type="file" class="form-control" id="formFile" (change)="upload($event)">
+                <div class="progress mb-3">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" [style.width.%]="uploadPercent"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="isUploaded">
+                <img [src]="valueByControl('imagePath')" width="50px" alt="">
+                <button type="button" class="btn btn-danger" (click)="deleteImage()">delete</button>
+            </ng-container>
+            <button [disabled]="categoryForm.invalid" type="submit" (click)="addCategory()" class="save"> {{ editStatus
+                ? 'ЗБЕРЕГТИ' : 'ДОБАВИТИ' }}</button>
+        </form>
+    </div>
+    <table class="list" id="table">
+        <thead>
+            <tr>
+                <td style="width :200px; "> <a>ID </a> </td>
+                <td style="width :200px; "> <a>Назва </a> </td>
+                <td style="width :300px;"> <a>Шлях</a></td>
+                <td style="width :150px; "><a>Картинка</a></td>
+                <td style="width :150px;  "> <a>Дії</a></td>
+            </tr>
+        </thead>
+        <tbody *ngFor="let category of adminCategories">
+            <tr>
+                <td style="width :200px; "> <a>{{ category.id }}</a> </td>
+                <td style="width :200px; "> <a>{{ category.name }} </a> </td>
+                <td style="width :300px;"> <a>{{ category.path }}</a></td>
+                <td style="width :150px; "><img [src]="category.imagePath" alt="" height="50px"></td>
+                <td style="width :150px;  ">
+                    <div class='buttons'><button (click)="editCategory(category)"> Редагувати</button> <button
+                            (click)="deleteCategory(category)" [disabled]="editStatus"> Видалити</button></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

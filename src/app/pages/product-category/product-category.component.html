@@ -1,0 +1,44 @@
+<div class="title">
+  <div class="top-block">
+    <ul class="categories-list ul"  >
+      <li class="categories-list-item "*ngFor="let category of adminCategories" >
+        <a [routerLink]="['/product/'+category.path]" routerLinkActive="route-active" class="nav-link ">{{ category.name }}</a></li>
+    </ul>
+    <select  id="select" (change)="rout($event)"   [(ngModel)]="selectValue" class=" select ">
+      <option *ngFor="let category of adminCategories"  multiple value="{{category.path}}" routerLinkActive="route-active" class="nav-link ">{{category.name}}</option>
+    </select>
+  </div>
+</div>
+
+<div class="all-products">
+
+  <div *ngFor="let product of userProducts">
+    <div *ngIf="(currentCategoryPath == product.category.path) ||
+     ((thisCategoryName == 'culinasia_menu') && (product.culinasia == true) )">
+      <div class="product">
+        <span *ngIf="product.favStatus == false" (click)="addToFavorites(product)" class="favorites">&#9825; </span>
+        <span *ngIf="product.favStatus ==  true" (click)="addToFavorites(product)" class="favorites">  &hearts;</span>
+        <img width="270px" [routerLink]="[ '/product/'+product.category.path, product.id ]"
+             [src]="product.imagePath">
+        <div class="h4"><h4 [routerLink]="[ '/product/'+product.category.path, product.id ]">{{ product.name }} </h4>
+          <h4>
+            {{ product.price * product.count }}
+          </h4></div>
+
+        <div>
+          <a class="description">{{ product.description | slice:0:75}}  <a
+            *ngIf="product.description.length > 75">...</a></a>
+
+          <div class="about">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" (click)="productCount(product, false)" class="minus">-</button>
+              <button type="button" class="value">{{product.count}}</button>
+              <button type="button" (click)="productCount(product, true)" class="plus ">+</button>
+            </div>
+            <button class='add' (click)="addToBasket(product)">Замовити</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

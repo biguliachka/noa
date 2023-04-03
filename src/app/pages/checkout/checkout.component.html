@@ -1,0 +1,161 @@
+<div class="content">
+  <div class="h1 title text-center page-main-title">Оформлення замовлення</div>
+</div>
+
+<div class="container">
+  <div class="data">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="personal-text ">
+        <div class="square">1</div>
+        <h4>Контактні дані</h4>
+      </div>
+      <div class="name">
+        <input type="text" [value]="user.firstName" placeholder="*Ваше ім'я">
+        <input type="text" [value]="user.lastName" placeholder="*Ваше прізвище">
+      </div>
+      <input type="text" [value]="user.phoneNumber" placeholder="*Ваш номер телефону">
+      <input type="text" [value]="user.email" placeholder="Email, щоб отримати копію замовлення">
+      <div  class="personal-text ">
+        <div class="square">2</div>
+        <h4 >Інформація про доставку </h4>
+      </div>
+      <div class="checkboxDostavka">
+        <div class="checkbox-entry"><div class="checkbox"></div></div><span>{{typeDostavky}}</span>
+      </div>
+      <div *ngIf="typeDostavky=='Самовивіз'">
+      <select   class="categories-list select " >
+        <option disabled selected>Ресторан за адресою</option>
+        <option multiple routerLinkActive="route-active" class="nav-link ">ТРЦ Victoria Gardens, Кульпарківська 226 А</option>
+        <option multiple routerLinkActive="route-active" class="nav-link ">Староєврейська 4</option>
+        <option multiple routerLinkActive="route-active" class="nav-link ">Крива Липа 8</option>
+        <option multiple routerLinkActive="route-active" class="nav-link ">СТРЦ Spartak, Мазепи 1Б</option>
+        <option multiple routerLinkActive="route-active" class="nav-link ">ТРЦ King Cross Leopolis, Стрийська 30</option>
+      </select>
+      <div class="name">
+        <input type="text" [value]="data">
+        <input type="text" [value]="time" >
+      </div>
+      </div>
+      <div *ngIf="typeDostavky!=='Самовивіз'">
+        <select   class="categories-list select " >
+          <option  selected>Львів</option>
+          <option  >Брюховичі</option>
+          <option  >Великі Грибовичі</option>
+          <option  >Дубляни</option>
+          <option  >Жирівка</option>
+          <option  >Зимна Вода</option>
+          <option  >Ков'ярі</option>
+          <option  >Кротошин</option>
+          <option  >Лапаївка</option>
+          <option  >Липники</option>
+          <option  >Малековичі</option>
+
+        </select>
+        <div class="name">
+          <input type="text" placeholder="*Введіть вулицю доставки">
+          <input type="text" placeholder="*№ будинку" >
+        </div>
+        <div class="name">
+        <div class="little">
+          <input type="text" placeholder="Під'їзд">
+          <input type="text" placeholder="Квартира" >
+        </div>
+          <div class="little">
+            <input type="text" placeholder="Поверх">
+            <input type="text" placeholder="Домофон" >
+          </div>
+        </div>
+        <div class="checkboxDostavka"(click)="orderTime()">
+          <div *ngIf="isTime" class="checkbox-entry"><div class="checkbox"></div></div>
+          <div *ngIf="!isTime" class="checkbox-entry-null"></div><span>На час</span>
+        </div>
+        <div *ngIf="isTime" class="name">
+          <input type="text" [value]="data">
+          <input type="text" [value]="time" >
+        </div>
+
+        <img style="width: 100%" src="https://firebasestorage.googleapis.com/v0/b/noa-ua.appspot.com/o/images%2Fmap.png?alt=media&token=89490c3b-7aac-4ae0-a427-f7fee933cc2f" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="order">
+    <div class="some-basket" *ngIf="total != 0">
+      <h4>Ваше замовлення</h4>
+      <div class="information" *ngFor="let product of basket">
+        <img class="img" [src]="product.imagePath">
+        <div class="start"><p>{{product.name}}</p>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" (click)="productCount(product, false)" class="minus">-</button>
+            <button type="button" class="value">{{product.count}}</button>
+            <button type="button" (click)="productCount(product, true)" class="plus ">+</button>
+          </div></div>
+
+        <div class="basket-price empty ">
+          <b id="basketTotalPrice" class="card-total-price">{{product.count * product.price}}</b>
+          грн
+        </div>
+        <span  aria-hidden="true"(click)="deleteBasket(product)">&times;</span>
+      </div>
+      <div class="information appliances" *ngIf="!noAppliances">
+           <p><b>Прибори</b></p>
+        <p>Вкажіть кількість осіб, на яке робите замовлення</p>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" (click)="Count(false)" class="minus">-</button>
+          <button type="button" class="value">{{someCount}}</button>
+          <button type="button" (click)="Count( true)" class="plus ">+</button>
+        </div>
+          <div class="basket-price empty ">
+            <b  class="card-total-price">Безкоштовно</b>
+          </div>
+    </div>
+      <div class="checkboxDostavka"(click)="Appliances()">
+        <div *ngIf="noAppliances" class="checkbox-entry"><div class="checkbox"></div></div>
+        <div *ngIf="!noAppliances" class="checkbox-entry-null"></div>
+        <span>Без приборів та серветок, з любов'ю до навколишнього середовища</span>
+      </div>
+      <div  class="personal-text ">
+        <div class="square">3</div>
+        <h4 >Інформація про оплату </h4>
+      </div>
+      <div class="checkboxDostavka">
+        <div (click)="cash()">
+        <div *ngIf="!noCash" class="checkbox-entry"><div class="checkbox"></div></div>
+        <div *ngIf="noCash" class="checkbox-entry-null"></div>
+        <span>Оплата готівкою</span>
+        </div>
+        <div *ngIf="!noCash" class="rest">
+          <span>Решта з </span><input type="text" class="suma" placeholder="Сума">
+          <div (click)="rest()">
+          <div *ngIf="!noRest" class="checkbox-entry"><div class="checkbox"></div></div>
+          <div *ngIf="noRest" class="checkbox-entry-null"></div>
+          <span>Без решти</span>
+          </div>
+        </div>
+        <div (click)="cash()">
+        <div *ngIf="noCash" class="checkbox-entry"><div class="checkbox"></div></div>
+        <div *ngIf="!noCash" class="checkbox-entry-null"></div>
+        <span>Online payment LiqPay</span>
+        </div>
+
+      </div>
+      <div  class="personal-text ">
+        <div (click)="comment()">
+          <div *ngIf="!noComment" class="checkbox-entry"><div class="checkbox"></div></div>
+          <div *ngIf="noComment" class="checkbox-entry-null"></div>
+          <span>Коментар / промокод / інше</span>
+        </div>
+        <input *ngIf="!noComment" type="text" placeholder="Ваш коментар">
+      </div>
+      <div class="buy">
+        <div class="allSumm"><span>Сума: </span><span><b id="basket-total-price" class="card-total-price">{{total}}</b>
+           грн</span>
+        </div>
+        <button [disabled]="total== 0" mat-dialog-close [routerLink]="['/checkout' ]"><span><b>ОФОРМИТИ
+                        ЗАМОВЛЕННЯ</b></span></button>
+
+      </div>
+
+    </div>
+  </div>
+</div>

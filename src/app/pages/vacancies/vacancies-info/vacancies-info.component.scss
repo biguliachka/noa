@@ -1,0 +1,295 @@
+.route {
+  margin: auto;
+  margin-top: 155px;
+  width: 90%;
+  height: 370px;
+  color: white;
+
+  .banner-bg {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    padding: 20px 10px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .opacity {
+    content: "";
+    position: absolute;
+    top: 155px;
+    margin: auto;
+    width: 90%;
+    height: 370px;
+    background: rgba(0, 0, 0, .31);
+  }
+
+  h1 {
+    z-index: 5;
+    position: relative;
+    padding-top: 80px;
+    margin: auto;
+    text-align: center;
+    font-family: MyFontB;
+  }
+
+  .about {
+    padding-top: 10px;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+    .city {
+      width: 50px;
+    }
+
+    p {
+      z-index: 5;
+      position: relative;
+      font-size: 16px;
+      font-family: MyFontBold;
+      width: 126px;
+      text-align: center;
+    }
+  }
+
+  a {
+    z-index: 5;
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+.mobile{
+  display: none;
+  color: black;
+}
+.container {
+  padding-top: 20px;
+    width: 92%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ .application, .information{
+
+    width: 50%;
+  }
+  .information{
+    padding-right: 20px;
+    color: #6D6D6D;
+    p{
+      font-family: MyFontB;
+      font-size: 16px;
+      margin: 0;
+    }
+    li{
+      font-size: 16px;
+      padding-left: 20px;
+    }
+    li::marker{
+      color: #57b846;
+    }
+  }
+  .application{
+    margin: auto;
+    text-align: center;
+    color: #6D6D6D;
+    h3{
+      color: black;
+      font-family: MyFontM;
+    }
+    .form-group {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    input,
+    button,
+    textarea {
+      font-family: serif;
+      width: 90%;
+      background-color: white;
+      border: 1px solid lightgray;
+      height: 50px;
+      border-radius: 5px;
+
+      padding: 10px;
+      color: black;
+    }
+    input:focus{
+      border: 1px solid #2d7d7d;
+      outline: none;
+    }
+    textarea{
+      height: 100px;
+    }
+    button {
+      background-color: #2d7d7d;
+      border: 3px solid #2d7d7d;
+      a{
+        font-family: MyFontBold;
+        color: white;
+      }
+    }
+    button:hover {
+      background-color: white;
+      a{
+        color: #2d7d7d;
+      }
+    }
+    .form-group-little{
+      width: 90%;
+      display: flex;
+      margin: auto;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      input{
+        margin: 10px 0;
+        width:49%
+      }
+    }
+  }
+}
+@media screen and (max-width: 1245px) {
+  .route {
+    margin-top: 130px;
+
+    .opacity {
+      top: 130px;
+    }
+  }
+}
+@media screen and (max-width: 1199px) {
+  .container{
+    .information{
+      width: 100%;
+    }
+    .application{
+      width: 610px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .route {
+    width: 510px;
+    height: 300px;
+    .opacity {
+      width: 510px;
+      height: 300px;
+    }
+    .about{
+      width: 300px;
+      p{
+        width: 110px;
+        font-size: 14px;
+      }
+    }
+    h1{
+      font-size: 25px;
+    }
+  }
+  .container{
+    width: 510px;
+    padding: 0;
+    margin-top: 20px;
+    .application{
+      width: 510px;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .route {
+    width: 95%;
+    .opacity {
+      width: 95%;
+    }
+    .about{
+      display: none;
+
+    }
+    h1{
+     display: none;
+    }
+  }
+  .container{
+    width: 95%;
+  }
+  .mobile{
+    width: 95%;
+    margin: auto;
+    display: block;
+    color: black;
+    .about{
+      display: none;
+      p{
+        font-size: 16px;
+      }
+    }
+    h1{
+      font-family: MyFontBold;
+      font-size: 25px;
+      text-align: center;
+    }
+  }
+}
+@media screen and (max-width: 575px) {
+  .route {
+    a{
+      display: none;
+    }
+    .about{
+      display: none;
+    }
+    h1{
+      display: none;
+    }
+  }
+  .mobile{
+      p{
+        font-size: 14px;
+      }
+    }
+    h1{
+      font-size: 20px;
+
+    }
+  .container{
+    .application{
+      .form-group-little{
+        input{
+          margin-top: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+  }
+
+@media screen and (max-width: 400px) {
+  .container {
+    .information {
+      p {
+        font-size: 13px;
+      }
+
+      li {
+        font-size: 13px;
+      }
+    }
+      .application{
+        font-size: 13px;
+        h3{
+          font-size: 15px;
+        }
+      }
+
+  }
+}

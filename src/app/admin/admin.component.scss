@@ -1,0 +1,40 @@
+.left-block {
+    padding: 200px 30px 15px 15px;
+    width: 200px;
+    height: 100%;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.555);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    float: left;
+
+    a {
+        padding: 15px;
+        border: 1px solid lightgray;
+        border-left: 0px;
+        color: rgba(0, 0, 0, 0.555);
+    }
+    button{
+      font-family: MyFontB;
+        margin: 10px auto;
+        height: 40px;
+        width: 100px;
+        border-radius: 10px;
+        background-color:  #2d7d7d;
+        border: 3px solid #2d7d7d;
+      color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    button:hover{
+        background-color: white;
+      color: #2d7d7d;
+    }
+    .route-active {
+        border-top: 4px solid #2d7d7d;
+        border-right: 0px;
+        color:black
+    }
+}

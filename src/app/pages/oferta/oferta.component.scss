@@ -1,0 +1,47 @@
+.content {
+  padding-top: 190px;
+  width: 90%;
+  margin: auto;
+  p{
+    font-size: 16px;
+    color: #323232;
+  }
+  .title, span{
+    font-family: MyFontBold;
+  }
+  span{
+    color: #2d7d7d;
+  }
+  .simple-page{
+    padding-top: 40px;
+    width: 85%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .content {
+    padding-top: 150px;
+    .h1 {
+      font-size: 30px;
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  .content {
+    .h1 {
+      font-size: 26px;
+    }
+    .simple-page{
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .content{
+    .h1{
+      font-size: 24px;
+    }
+  }
+
+}

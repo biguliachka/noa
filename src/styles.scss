@@ -1,0 +1,51 @@
+
+@font-face {
+  font-family:'myFont' ;
+  src: url(./app/shared/styles/Demo_fonts/MPLUSRounded1c-Regular.ttf);
+}
+@font-face {
+  font-family:'myFontBold' ;
+  src: url(./app/shared/styles/Demo_fonts/MPLUSRounded1c-ExtraBold.ttf);
+}
+@font-face {
+  font-family:'myFontM' ;
+  src: url(./app/shared/styles/Demo_fonts/MPLUSRounded1c-Medium.ttf);
+}
+@font-face {
+  font-family:'myFontB' ;
+  src: url(./app/shared/styles/Demo_fonts/MPLUSRounded1c-Bold.ttf);
+}
+@import 'app/shared/styles/theme-material';
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'myFont';
+}
+::-webkit-scrollbar{
+  width: 6px;
+}
+::-webkit-scrollbar-track{
+  width: 6px;
+  background: white;
+}
+::-webkit-scrollbar-thumb{
+  background:#2d7d7d ;
+  width: 0;
+  height: 35%;
+  cursor: pointer;
+}
+mat-dialog-container .mat-dialog-container {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+body {
+  height: auto;
+  overflow: visible;
+  background-image: url(https://noa.ua/wp-content/themes/tomatina/img/bg-w-o3.png);
+  background-size: cover;
+  z-index: -1;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

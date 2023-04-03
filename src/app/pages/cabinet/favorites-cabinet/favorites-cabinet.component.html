@@ -1,0 +1,29 @@
+<div class="all-products">
+
+  <div *ngFor="let product of favorites">
+
+    <div class="product">
+      <span  class="favorites" (click)="deleteFavorites(product)">&times; </span>
+      <img width="270px" [routerLink]="[ '/product/'+product.category.path, product.id ]"
+           [src]="product.imagePath">
+      <div class="h4"><h4 [routerLink]="[ '/product/'+product.category.path, product.id ]">{{ product.name }} </h4>
+        <h4>
+          {{ product.price * product.count }}
+        </h4></div>
+
+      <div>
+        <a class="description">{{ product.description | slice:0:75}}  <a
+          *ngIf="product.description.length > 75">...</a></a>
+
+        <div class="about">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" (click)="productCount(product, false)" class="minus">-</button>
+            <button type="button" class="value">{{product.count}}</button>
+            <button type="button" (click)="productCount(product, true)" class="plus ">+</button>
+          </div>
+          <button class='add' (click)="addToBasket(product)">Замовити</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

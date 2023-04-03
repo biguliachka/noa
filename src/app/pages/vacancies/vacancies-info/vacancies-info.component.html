@@ -1,0 +1,73 @@
+<div class="route">
+  <div class="banner-bg" [ngStyle]="{backgroundImage: 'url('+currentVacancieImg+')'}">
+    <a [routerLink]="[ '' ]">Головна &#9675;</a>
+    <a [routerLink]="[ '/vacancies' ]">Вакансії &#9675;</a>
+    <a>{{currentVacancieName}}</a>
+    <h1>Вакансія {{currentVacancieName}}</h1>
+    <div class="about"><p class="city">Місто Львів</p>
+      <p>Місце праці ресторан NOA</p>
+      <p>Зайнятість гнучкий графік</p></div>
+  </div>
+  <div class="opacity"></div>
+</div>
+<div class="mobile">
+  <h1>Вакансія {{currentVacancieName}}</h1>
+  <p class="city"><b >Місто</b> Львів</p>
+  <p><b>Місце праці</b> ресторан NOA</p>
+    <p><b  >Зайнятість</b> гнучкий графік</p>
+</div>
+<div class="container">
+  <div class="information">
+    <div *ngFor="let desk of currentVacancieDescription">
+      <p>{{ desk }}.</p>
+    </div>
+    <p style="margin-top: 15px">Впевнені, що ти точно легко справишся із:</p>
+    <div *ngFor="let text of text">
+      <li>{{ text }}.</li>
+    </div>
+    <p style="margin-top: 15px">Ми гарантуємо:</p>
+
+  <li>  позмінний графік — 2/2 або 3/3</li>
+  <li>  зрозумілу систему оплати праці 2 рази на місяць</li>
+  <li>  знижка -40% на меню закладу</li>
+  <li>  таксі за рахунок компанії</li>
+  <li>  винагорода до 1500 грн за кожного друга, якого привів до нас</li>
+  <li>  компенсація вартості медогляду</li>
+  <li>  обіди за рахунок компанії</li>
+  <li>  можливість стати менеджером або шефом</li>
+
+    <p style="margin-top: 15px">Окрім цього:</p>
+
+    <li>ми навчаємо тебе та платимо за стажування</li>
+    <li>за перший рік твоя зарплата зросте на 20% (через 6 міс + 10%, і ще через 6 міс + 10%)</li>
+
+
+    <p style="margin-top: 15px; font-family: myFont">Приєднуйся до команди! —
+   <b>   <span href="https://docs.google.com/forms/d/e/1FAIpQLSfuzgcigF4_Wlk3Is5JhBovCgrnRYliXRJQdub-q-UXEZLfog/viewform" style="color: #2d7d7d;text-decoration: underline; cursor: pointer"> залишай заявку</span> </b> або телефонуй за номером</p>
+
+    <p style="padding-top: 15px;font-family: myFont">+380676996634 Марія</p>
+    <p style="margin-bottom: 15px; font-family: myFont">+380671070761 Анастасія</p>
+
+    <p style="font-family: myFont">Детальніше про відкриті вакансії:
+      <b><span href='https://rabota.ua/ua/company3616782' style="color: #2d7d7d;cursor: pointer; text-decoration: underline">rabota.ua</span></b></p>
+  </div>
+
+  <div class="application">
+   <h3>Заявка на вакансію</h3>
+    <p>Заповніть дану заявку і ми зв’яжемося з вами найблищим часом</p>
+    <div class="form-group-little">
+      <input type="text" placeholder="Ваше ім'я">
+      <input type="text"  placeholder="Ваше прізвище">
+    </div>
+    <div class="form-group">
+      <input type="text"   placeholder="Ваш телефон">
+    </div>
+    <div class="form-group">
+      <input type="email" placeholder="Ваш e-mail">
+    </div>
+    <div class="form-group">
+      <textarea placeholder="Чому ви хочете працювати з нами?"></textarea>
+    </div>
+    <button><a>НАДІСЛАТИ</a></button>
+  </div>
+</div>

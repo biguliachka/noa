@@ -1,0 +1,22 @@
+<mat-dialog-content>
+<div class="inf">
+
+  <div class="popup-title h3 ">Привіт!<br>
+  <span>Обери спосіб отримання замовлення</span>  </div>
+  <div class="delivery-popup-block">
+    <a (click)=" dostavkaType('Доставка кур’єром')" class="delivery-popup-link btn_delivery" data-type-delivery="courierdelivery">
+      <div class="img">
+        <img src="https://noa.ua/wp-content/themes/tomatina/img/icons/delivery_popup_one.svg" alt="">
+        <p>Доставка кур’єром</p>
+      </div>
+    </a>
+    <span>або</span>
+    <a (click)=" dostavkaType('Самовивіз')" class="delivery-popup-link btn_delivery" data-type-delivery="selfdelivery">
+      <div class="img">
+        <img src="https://noa.ua/wp-content/themes/tomatina/img/icons/delivery_popup_two.svg" alt="">
+        <p>Самовивіз</p>
+      </div>
+    </a>
+  </div>
+</div>
+</mat-dialog-content>

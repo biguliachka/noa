@@ -1,0 +1,136 @@
+.product {
+    width: 97%;
+    min-height: 600px;
+    padding: 190px 20px 20px 30px;
+    margin: 0;
+
+    button,
+    input,
+    textarea{
+        margin: 10px;
+        height: 50px;
+        width: 250px;
+        border-radius: 10px;
+        background-color: white;
+        border: 3px solid #2d7d7d;
+      color: #2d7d7d;
+    }
+  button{
+    font-family: MyFontB;
+  }
+    textarea,
+    select{
+        width: 520px;
+    }
+    select{
+      height: 50px;
+      border-radius: 10px;
+        margin-left: 10px;
+    border:  1px solid lightgray
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    input[type="text"]:focus ,
+    textarea:focus,
+    select:focus{
+        outline: none;
+        border: 1px solid #2d7d7d;
+    }
+  input[type="checkbox"]{
+    width: 20px;
+    height:20px ;
+  }
+    input,
+    textarea {
+        padding: 11px;
+        border: 1px solid lightgray;
+        font-size: 12px;
+        float: left;
+    }
+    input[type="file"] {
+        width: 520px;
+    }
+    .save,
+    .btn-danger {
+        background-color: #2d7d7d;
+        margin-bottom: 100px;
+    }
+    .save:hover {
+        background-color: white;
+    }
+    button:hover {
+        background-color: #2d7d7d;
+      color: white;
+    }
+
+    table,
+    td {
+      margin: auto;
+        border-spacing: 0px;
+        height: 20px;
+        font-size: 14px;
+      a{
+        color: #807f7f;
+        text-decoration: none;
+        cursor: auto;
+      }
+    }
+    thead {
+        color: rgba(0, 0, 0, 0.692);
+    }
+    thead td {
+        font-weight: bold;
+        border-bottom: 1px solid lightgray ;
+        border-top: 0px;
+    }
+    td {
+        padding: 15px;
+    }
+    tbody td a {
+        font-family: serif;
+    }
+    tbody td{
+        border-bottom: 1px solid lightgray;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        button {
+            border: none;
+            background-color: white;
+            color: #2d7d7d;
+            cursor: pointer;
+            height:  20px;
+            width: 50px;
+            margin: 0;
+            padding: 0;
+        }
+        button:hover{
+            text-decoration:underline;
+        }
+    }
+    .progress{
+        width: 530px;
+    }
+  .btn-danger{
+    color: white;
+  }
+  button[type='submit']{
+    color: white;
+  }
+  button[type='submit']:hover{
+    color: #2d7d7d;
+  }
+  .checkbox{
+    width: 250px ;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    input[type='checkbox']{
+      position: static;
+    }
+  }
+}

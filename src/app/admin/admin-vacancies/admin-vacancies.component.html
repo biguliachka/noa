@@ -1,0 +1,56 @@
+<div class="actions">
+    <button (click)="addVacanciesStatus()">ДОДАТИ ВАКАНСІЮ</button>
+    <div *ngIf="addStatus">
+        <form [formGroup]="vacancieForm" (ngSubmit)="addVacancie()">
+            <div><input type="text" formControlName="name" placeholder="*Назва">
+                <input type="text" formControlName="path" placeholder="*Заголовок">
+            </div>
+          <textarea formControlName="tasks" placeholder="*Завдання"></textarea>
+            <textarea formControlName="description" placeholder="*Опис"></textarea>
+            <ng-container *ngIf="!isUploaded">
+                <input type="file" class="form-control" id="formFile" (change)="upload($event)">
+                <div class="progress mb-3">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" [style.width.%]="uploadPercent"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="isUploaded">
+                <img [src]="valueByControl('imagePath')" width="100px" alt="">
+                <button type="button" class="btn btn-danger" (click)="deleteImage()">delete</button>
+            </ng-container>
+            <button [disabled]="vacancieForm.invalid" type="submit" (click)="addVacancie()" class="save">{{ editStatus
+                ? 'ЗБЕРЕГТИ' : 'ДОБАВИТИ' }}</button>
+        </form>
+    </div>
+    <table class="list" id="table">
+        <thead>
+            <tr>
+
+                <td style="width :150px; "> <a>Назва </a> </td>
+                <td style="width :200px;"> <a>Заголовок</a></td>
+                <td style="width :250px"> <a>Опис</a></td>
+              <td style="width :150px; "> <a>Завдання </a> </td>
+                <td style="width :120px; "><a>Картинка</a></td>
+                <td style="width :120px;  "> <a>Дії</a></td>
+            </tr>
+        </thead>
+        <tbody *ngFor="let vacancie of adminVacancies">
+            <tr>
+
+                <td style="width :170px; "> <a>{{vacancie.name}} </a> </td>
+                <td style="width :200px;"> <a>{{vacancie.path}}</a></td>
+                <td style="width :280px"> <a>{{vacancie.description| slice:0:52 }}
+                    <span *ngIf="vacancie.description.length > 52">...</span> </a>
+                </td>
+              <td style="width :280px"> <a>{{vacancie.tasks| slice:0:52 }}
+                <span *ngIf="vacancie.tasks.length > 52">...</span> </a>
+              </td>
+                <td style="width :120px; "><img [src]="vacancie.imagePath" alt="" height="50px"></td>
+                <td style="width :120px;  ">
+                    <div class='buttons'><button (click)="editVacancie(vacancie)"> Редагувати</button> <button
+                            (click)="deleteVacancie(vacancie)" [disabled]="editStatus"> Видалити</button></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

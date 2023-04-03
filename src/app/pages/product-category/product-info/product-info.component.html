@@ -1,0 +1,35 @@
+<div class="route">
+  <a [routerLink]="[ '' ]">Головна &#8226;</a>
+  <a [routerLink]="[ '/product/'+currentCategoryPath ]">{{currentCategoryName}} &#8226;</a>
+  <a>{{currentName}}</a>
+</div>
+<div class="container ">
+
+
+  <div>
+    <img [src]="currentImagePath" class="img-fluid rounded-start" [alt]="currentName">
+  </div>
+  <div class="inform">
+    <div class="card-body">
+      <p class="card-text"> {{ currentWeight }} г</p>
+      <h1 class="card-title"><b>{{ currentName }}</b></h1>
+      <div>
+        <p class="card-text">{{ currentDescription }}</p>
+      </div>
+
+<div class="price">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" (click)="productCount(currentProduct, false)" class="minus">-</button>
+        <button type="button" class="value">{{currentCount}}</button>
+        <button type="button" (click)="productCount(currentProduct, true)" class="plus ">+</button>
+      </div>
+  <h3><b>{{ currentPrice * currentCount }} </b>грн </h3>
+</div>
+      <button class="add" (click)="addToBasket(currentProduct)">Додати в кошик</button>
+
+
+    </div>
+  </div>
+</div>
+
+
